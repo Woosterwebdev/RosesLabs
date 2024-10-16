@@ -10,7 +10,7 @@ export default function Header() {
 
     return (
         <header>
-            <Link className="site-logo" to='/'><img className='logo' src='/rose.png' /></Link>
+            <Link className="site-logo" to='/'><img className='logo' src='/rosesLaboratory5.webp' /></Link>
             <nav>
                 <NavLink 
                     to='/about'

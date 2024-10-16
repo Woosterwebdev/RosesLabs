@@ -1,10 +1,10 @@
-require('dotenv').config()
+// require('dotenv').config()
 import { initializeApp } from "firebase/app"
 import { getFirestore, collection, doc, getDocs, getDoc } from "firebase/firestore"
 
 
 const firebaseConfig = {
-  apiKey: `${process.env.APIKEY}`,
+  APIKEY: "AIzaSyDkUdFLCSjFyfhMW_dBnE6BxY5DquIgX8U", //apikey is only here for dev purposes
   authDomain: "roseslabs-51b30.firebaseapp.com",
   projectId: "roseslabs-51b30",
   storageBucket: "roseslabs-51b30.appspot.com",
@@ -14,7 +14,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const db = getFirstore(app)
+const db = getFirestore(app)
 const shampooAssortmentRef = collection(db, "shampoos")
 
 export async function getShampoos() {

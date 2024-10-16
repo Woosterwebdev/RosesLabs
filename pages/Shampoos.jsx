@@ -3,14 +3,14 @@ import { Link, useSearchParams } from 'react-router-dom'
 import { getShampoos } from '../api'
 
 export default function Shampoo() {
-    //Set shampoo states
+    //Set states for search, shampoos, error, loading, and typefilter
     const [searchParams, setSearchParams] = useSearchParams()
     const [shampoos, setShampoos] = React.useState([])
     const [error, setError] = React.useState(null)
     const [loading, setLoading] = React.useState(false)
     const typeFilter = searchParams.get("type")
 
-    //fetch shampoo options
+    //loadShampoos and getShampoos from api.js
     React.useEffect(() => {
         async function loadShampoos() {
             setLoading(true)
@@ -28,7 +28,6 @@ export default function Shampoo() {
         ? shampoos.filter(shampoo => shampoo.type === typeFilter)
         : shampoos
 
-    //loop returned shampoo
     const shampooElements = displayedShampoos.map(shampoo => (
         <div key={shampoo.id} className='shampoo-tile'>
             <Link
