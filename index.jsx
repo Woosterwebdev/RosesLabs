@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Layout from '/components/Layout'
 import Home from '/pages/Home'
 import About from '/pages/About'
-import Shampoo from '/pages/Shampoo'
+import Shampoos from '/pages/Shampoos'
 import ShampooDetails from '/pages/ShampooDetails'
 import NotFound from '/pages/NotFound'
 
@@ -15,7 +15,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
-          <Route path="shampoo" element={<Shampoo />} />
+          <Route path="shampoos" element={<Shampoos />} />
           <Route path="shampoo/:id" element={<ShampooDetails />} />
 
           <Route path="*" element={<NotFound />} />
