@@ -17,6 +17,8 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app)
 const shampooAssortmentRef = collection(db, "shampoos")
 
+
+/* Fetch from shampoos DB */
 export async function getShampoos() {
     const snapshot = await getDocs(shampooAssortmentRef)
     const shampoos = snapshot.docs.map(doc => ({
@@ -26,6 +28,7 @@ export async function getShampoos() {
     return shampoos
 }
 
+/* Fetch specific id from shampoos DB */
 export async function getShampoo(id) {
     const docRef = doc(db, "shampoos", id)
     const snapshot = await getDoc(docRef)

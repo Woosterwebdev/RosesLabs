@@ -10,7 +10,7 @@ export default function Shampoo() {
     const [loading, setLoading] = React.useState(false)
     const typeFilter = searchParams.get("type")
 
-    //loadShampoos and getShampoos from api.js
+    /* loadShampoos and getShampoos from api.js */
     React.useEffect(() => {
         async function loadShampoos() {
             setLoading(true)
@@ -24,10 +24,12 @@ export default function Shampoo() {
         }
     }, [])
 
+    /* If filter selected filter shampoos state */
     const displayedShampoos = typeFilter
         ? shampoos.filter(shampoo => shampoo.type === typeFilter)
         : shampoos
 
+    /* Loop through each shampoo retrieved from shampoos state and generate product tile */
     const shampooElements = displayedShampoos.map(shampoo => (
         <div key={shampoo.id} className='shampoo-tile'>
             <Link
